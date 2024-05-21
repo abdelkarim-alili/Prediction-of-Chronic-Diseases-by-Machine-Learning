@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="header">
+                <h1>asdsadasd</h1>
+                <p>sadsadsadsadsad</p>
+            </div>
+            <div class="grid-3">
+                <button class="button" data-bs-toggle="modal" data-bs-target="#modal">Button 1</button>
+                <button class="button" data-bs-toggle="modal" data-bs-target="#modal">Button 2</button>
+                <button class="button" data-bs-toggle="modal" data-bs-target="#modal">Button 3</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <form action="/submit" method="post">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal">Form</h1>
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 box">
+                                <label class="label" for="fullName">Full Name :</label>
+                                <input type="text" name="fullName" id="fullName" placeholder="Your Full Name" class="input" required>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="age">Age :</label>
+                                <input type="text" name="age" id="age" placeholder="29" class="input" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
