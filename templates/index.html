@@ -15,31 +15,32 @@
                 <p>sadsadsadsadsad</p>
             </div>
             <div class="grid-3">
-                <button class="button" data-bs-toggle="modal" data-bs-target="#modal">Heart Disease Prediction</button>
-                <button class="button" data-bs-toggle="modal" data-bs-target="#modal">Button 2</button>
+                <button class="button" data-bs-toggle="modal" data-bs-target="#modalHeart">Heart Disease Prediction</button>
+                <button class="button" data-bs-toggle="modal" data-bs-target="#modalKidney">Kidney Disease Prediction</button>
                 <button class="button" data-bs-toggle="modal" data-bs-target="#modal">Button 3</button>
             </div>
         </div>
     </section>
-
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+    
+    <!-- Modal Heart Disease Prediction -->
+    <div class="modal fade" id="modalHeart" tabindex="-1" aria-labelledby="modalHeart" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
-                <form action="/result" method="post">
+                <form action="/heart_disease_results" method="post">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modal">Form</h1>
+                        <h1 class="modal-title fs-5" id="modal">Heart Disease Prediction Form</h1>
                         <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-6 box">
                                 <label class="label" for="age">Age :</label>
-                                <input type="text" name="age" id="age" placeholder="Enter Age" class="input" required>
+                                <input type="text" name="age" id="age" placeholder="Enter Age" class="input" required/>
                             </div>
                             <div class="col-6 box">
                                 <label class="label" for="sex">Sex :</label>
-                                <select class="form-select" id="sex" name="sex">
-                                    <option selected disabled>----select option----</option>
+                                <select class="form-select" id="sex" name="sex" required>
+                                    <option value="" selected disabled hidden>----select option----</option>
                                     <option value="0">Female</option>
                                     <option value="1">Male</option>
                                 </select>
@@ -48,8 +49,8 @@
                         <div class="row">
                             <div class="col-6 box">
                                 <label class="label" for="cp">Chest Pain Type :</label>
-                                <select class="form-select" id="cp" name="cp">
-                                    <option selected disabled>----select option----</option>
+                                <select class="form-select" id="cp" name="cp" required>
+                                    <option value="" selected disabled hidden>----select option----</option>
                                     <option value="0">Typical Angina</option>
                                     <option value="1">Atypical Angina</option>
                                     <option value="2">Non-anginal Pain</option>
@@ -58,18 +59,18 @@
                             </div>
                             <div class="col-6 box">
                                 <label class="label" for="trestbps">Resting Blood Pressure :</label>
-                                <input type="text" name="trestbps" id="trestbps" placeholder="Enter Resting Blood Pressure" class="input" required>
+                                <input type="text" name="trestbps" id="trestbps" placeholder="Enter Resting Blood Pressure" class="input" required/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6 box">
                                 <label class="label" for="chol">Serum Cholesterol :</label>
-                                <input type="text" name="chol" id="chol" placeholder="Enter Serum Cholesterol" class="input" required>
+                                <input type="text" name="chol" id="chol" placeholder="Enter Serum Cholesterol" class="input" required/>
                             </div>
                             <div class="col-6 box">
                                 <label class="label" for="fbs">Fasting Blood Sugar :</label>
-                                <select class="form-select" id="fbs" name="fbs">
-                                    <option selected disabled>----select option----</option>
+                                <select class="form-select" id="fbs" name="fbs" required>
+                                    <option value="" selected disabled hidden>----select option----</option>
                                     <option value="0">Less than 120 mg/dl</option>
                                     <option value="1">Greater than 120 mg/dl</option>
                                 </select>
@@ -78,8 +79,8 @@
                         <div class="row">
                             <div class="col-6 box">
                                 <label class="label" for="restecg">Resting Electrocardiographic Results :</label>
-                                <select class="form-select" id="restecg" name="restecg">
-                                    <option selected disabled>----select option----</option>
+                                <select class="form-select" id="restecg" name="restecg" required>
+                                    <option value="" selected disabled hidden>----select option----</option>
                                     <option value="0">Normal</option>
                                     <option value="1">Having ST-T wave abnormality</option>
                                     <option value="2">Probable or definite left ventricular hypertrophy</option>
@@ -87,53 +88,128 @@
                             </div>
                             <div class="col-6 box">
                                 <label class="label" for="thalach">Maximum Heart Rate Achieved :</label>
-                                <input type="text" name="thalach" id="thalach" placeholder="Enter Maximum Heart Rate Achieved" class="input" required>
+                                <input type="text" name="thalach" id="thalach" placeholder="Enter Maximum Heart Rate Achieved" class="input" required/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6 box">
                                 <label class="label" for="exang">Exercise Induced Angina :</label>
-                                <select class="form-select" id="exang" name="exang">
-                                    <option selected disabled>----select option----</option>
+                                <select class="form-select" id="exang" name="exang" required>
+                                    <option value="" selected disabled hidden>----select option----</option>
                                     <option value="0">No</option>
                                     <option value="1">Yes</option>
                                 </select>
                             </div>
                             <div class="col-6 box">
                                 <label class="label" for="oldpeak">ST Depression Induced by Exercise :</label>
-                                <input type="text" name="oldpeak" id="oldpeak" placeholder="Enter ST Depression Induced by Exercise" class="input" required>
+                                <input type="text" name="oldpeak" id="oldpeak" placeholder="Enter ST Depression Induced by Exercise" class="input" required/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6 box">
                                 <label class="label" for="slope">Slope of the Peak Exercise ST Segment :</label>
-                                <select class="form-select" id="slope" name="slope">
-                                    <option selected disabled>----select option----</option>
+                                <select class="form-select" id="slope" name="slope" required>
+                                    <option value="" selected disabled hidden>----select option----</option>
                                     <option value="0">Upsloping</option>
                                     <option value="1">Flat</option>
                                     <option value="2">Downsloping</option>
                                 </select>
                             </div>
                             <div class="col-6 box">
-                                <label class="label" for="ca">Number of Major Vessels (0-3) Colored by Fluoroscopy :</label>
-                                <input type="text" name="ca" id="ca" placeholder="Enter Number of Major Vessels Colored by Fluoroscopy" class="input" required>
+                                <label class="label" for="ca">Number of Major Vessels (0-3) Colored by Fluoroscopy
+                                    :</label>
+                                <input type="text" name="ca" id="ca" placeholder="Enter Number of Major Vessels Colored by Fluoroscopy" class="input" required/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 box">
+                            <div class="col-6 box">
                                 <label class="label" for="thal">Thalassemia :</label>
-                                <select class="form-select" id="thal" name="thal">
-                                    <option selected disabled>----select option----</option>
+                                <select class="form-select" id="thal" name="thal" required>
+                                    <option value="" selected disabled hidden>----select option----</option>
                                     <option value="0">Normal</option>
-                                    <option value="1">Fixed Defect</option> 
-                                    <option value="2">Reversible Defect</option>  
+                                    <option value="1">Fixed Defect</option>
+                                    <option value="2">Reversible Defect</option>
                                 </select>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Detect</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Kidney Disease Prediction -->
+    <div class="modal fade" id="modalKidney" tabindex="-1" aria-labelledby="modalKidney" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <form action="/kidney_disease_results" method="post">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal">Kidney Disease Prediction Form</h1>
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 box">
+                                <label class="label" for="bloodPressure">Blood Pressure :</label>
+                                <input type="text" name="bloodPressure" id="bloodPressure" class="input" placeholder="Enter Blood Pressure" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="specificGravity">Specific Gravity :</label>
+                                <input type="text" name="specificGravity" id="specificGravity" class="input" placeholder="Enter Specific Gravity" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="albumin">Albumin :</label>
+                                <input type="text" name="albumin" id="albumin" class="input" placeholder="Enter Albumin" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="sugar">Sugar :</label>
+                                <input type="text" name="sugar" id="sugar" class="input" placeholder="Enter Sugar" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="redBloodCell">Red Blood Cell :</label>
+                                <input type="text" name="redBloodCell" id="redBloodCell" class="input" placeholder="Enter Red Blood Cell" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="bloodUrea">Blood Urea :</label>
+                                <input type="text" name="bloodUrea" id="bloodUrea" class="input" placeholder="Enter Blood Urea" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="serumCreatine">Serum Creatine :</label>
+                                <input type="text" name="serumCreatine" id="serumCreatine" class="input" placeholder="Enter Serum Creatine" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="sodium">Sodium :</label>
+                                <input type="text" name="sodium" id="sodium" class="input" placeholder="Enter Sodium" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="potassium">Potassium :</label>
+                                <input type="text" name="potassium" id="potassium" class="input" placeholder="Enter Potassium" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="hemoglobine">Hemoglobine :</label>
+                                <input type="text" name="hemoglobine" id="hemoglobine" class="input" placeholder="Enter Hemoglobine" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="whiteBloodCellsCount">White Blood Cell Count :</label>
+                                <input type="text" name="whiteBloodCellsCount" id="whiteBloodCellsCount" class="input" placeholder="Enter White Blood Cell Count" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="redBloodCellsCount">Red Blood Cells Count :</label>
+                                <input type="text" name="redBloodCellsCount" id="redBloodCellsCount" class="input" placeholder="Enter Red Blood Cells Count" required/>
+                            </div>
+                            <div class="col-6 box">
+                                <label class="label" for="hypertension">Hypertension :</label>
+                                <input type="text" name="hypertension" id="hypertension" class="input" placeholder="Enter Hypertension" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Detect</button>
                     </div>
                 </form>
             </div>
