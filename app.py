@@ -10,7 +10,7 @@ def home():
 
 # Results of Heart Disease Prediction
 @app.route('/heart_disease_results', methods=['POST'])
-def submit():
+def submit_heart():
     if request.method == 'POST':
         try:
             age = int(request.form['age'])
@@ -67,6 +67,33 @@ def submit_kidney():
                 result = 'According to the information provided, signs of kidney disease are detected.'
             else:
                 result = 'According to the information provided, kidney disease is not indicated.'
+
+            return render_template('result.html', prediction=result)
+        except Exception as e:
+            return f"An error occurred: {e}"
+
+# Results of Diabetes Disease Prediction
+@app.route('/diabetes_disease_results', methods=['POST'])
+def submit_diabetes():
+    if request.method == 'POST':
+        try:
+            pregnancies = int(request.form.get('pregnancies'))
+            glucose = float(request.form.get('glucose'))
+            bloodpressure = float(request.form.get('bloodpressure'))
+            skin_thickness = float(request.form.get('skinThickness'))
+            insulin = float(request.form.get('insulin'))
+            bmi = float(request.form.get('bmi'))
+            diabetes_pedigree_function = float(request.form.get('diabetesPedigreeFunction'))
+            age = int(request.form.get('age'))
+
+            user_data = np.array([[pregnancies, glucose, bloodpressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age]])
+
+            prediction = ValuePredictor("diabetes_model.pkl", user_data)
+
+            if prediction == 1:
+                result = 'According to the information provided, signs of diabetes disease are detected.'
+            else:
+                result = 'According to the information provided, diabetes disease is not indicated.'
 
             return render_template('result.html', prediction=result)
         except Exception as e:
