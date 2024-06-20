@@ -27,8 +27,11 @@ The datasets used for this project are sourced from Kaggle website. The data inc
 To run this project locally, follow these steps:
 
 1- Clone the repository
-2- Navigate to the project directory
-3- Create and activate a virtual environment (optional but recommended)
+   ```
+   https://github.com/abdelkarim-alili/Prediction-of-Chronic-Diseases-by-Machine-Learning.git
+   ```
+2- Navigate to the project directory.
+3- Create and activate a virtual environment (optional but recommended).
 4- Install the required dependencies:
    ```
    pip install -r requirements.txt
