@@ -10,14 +10,25 @@ body {
     background-color: #fafafa;
 }
 
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
-    height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+}
+
+.header {
+    text-align: center;
+}
+
+.header p {
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .grid-3 {
@@ -94,4 +105,13 @@ body {
 
 .footer a:hover {
     color: #83c5be;
+}
+
+@media (max-width: 768px) {
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 15px;
+    }
 }
