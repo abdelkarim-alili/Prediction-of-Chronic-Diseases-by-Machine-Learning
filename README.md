@@ -30,7 +30,9 @@ To run this project locally, follow these steps:
 2- Navigate to the project directory
 3- Create and activate a virtual environment (optional but recommended)
 4- Install the required dependencies:
+   ```
    pip install -r requirements.txt
+   ```
 
 ## Models
 
